@@ -16,7 +16,6 @@ import sys
 def quartiles(arr):
     # Write your code here
     # arr = [4, 17, 7, 14, 18, 12, 3, 16, 10, 4, 4, 12]
-    res = []
     n = len(arr)
             
     for i in range(n-1):
@@ -29,20 +28,27 @@ def quartiles(arr):
     mid = n//2
     lmid = mid//2
     umid = mid+mid//2  
-        
+    a,b,c = 0,0,0
     if n%2==0 : # even
         if mid%2 == 0:
-            res.append((arr[lmid-1]+arr[lmid])/2)    
-            res.append((arr[mid-1]+arr[mid])/2)
-            res.append((arr[umid-1]+arr[umid])/2)
+            a = (arr[lmid-1]+arr[lmid])/2   
+            b = (arr[mid-1]+arr[mid])/2
+            c = (arr[umid-1]+arr[umid])/2
         else:
-            res.append(arr[lmid])    
-            res.append((arr[mid-1]+arr[mid])/2)
-            res.append(arr[umid])
+            a = arr[lmid]    
+            b = (arr[mid-1]+arr[mid])/2
+            c = arr[umid]
     else: # odd
-        res.append((arr[lmid-1]+arr[lmid])/2)
-        res.append(arr[mid])
-        res.append((arr[umid]+arr[umid+1])/2)
+        if mid%2 == 0:
+            a = (arr[lmid-1]+arr[lmid])/2
+            b = arr[mid]
+            c = (arr[umid]+arr[umid+1])/2
+        else:
+            a = (arr[lmid])
+            b = arr[mid]
+            c = (arr[umid+1])
+    
+    res = [a,b,c]
     return map(int, res)
         
     
