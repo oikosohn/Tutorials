@@ -1,8 +1,7 @@
 # 변수와 계산
 
-변수 계산
-
-```
+## 변수 계산
+```scala
 object LearnScala {
     def main(args: Array[String]): Unit = {
          // 1(Int 리터럴)과 같은 원시 타입은 객체이다, 스칼라의 원시 타입은 컴파일 이후에는 성능을 위해 자바 원시 타입을 사용할 수 있는 경우 자바 원시 타입을 사용한다.
@@ -12,9 +11,8 @@ object LearnScala {
 }
 ```
 
-변수와 상수
-
-```
+## 변수와 상수
+```scala
 object LearnScala {
     def main(args: Array[String]): Unit = {
         var x = 1 + 2
@@ -34,9 +32,8 @@ object LearnScala {
 }
 ```
 
-변수 출력하기
-
-```
+## 변수 출력하기
+```scala
 object LearnScala {
     def main(args: Array[String]): Unit = {
         var x = 10
@@ -61,8 +58,8 @@ object LearnScala {
 
 # 편리한 스칼라
 
-Range와 List
-```
+## Range와 List
+```scala
 object LearnScala {
     def main(args: Array[String]): Unit = {
         // ① to를 이용하면 1부터 10을 포함하는 Range를 생성합니다.
@@ -93,8 +90,8 @@ object LearnScala {
 }
 ```
 
-숫자 다루기
-```
+## 숫자 다루기
+```scala
 object LearnScala {
     def main(args: Array[String]): Unit = {
         val num = -5  
@@ -108,8 +105,8 @@ object LearnScala {
 }
 ```
 
-문자열 다루기
-```
+## 문자열 다루기
+```scala
 object LearnScala {
     def main(args: Array[String]): Unit = {
         // ① 뒤집기
@@ -133,8 +130,8 @@ object LearnScala {
 
 # 메소드와 함수
 
-메소드 정의
-```
+## 메소드 정의
+```scala
 object LearnScala {
     // ① 일반적인 메소드
     def add(x:Int, y:Int):Int = {
@@ -157,8 +154,8 @@ object LearnScala {
 }
 ```
 
-익명함수1
-```
+## 익명함수1
+```scala
 object LearnScala {
     
     // 매개변수로 받은 익명함수에 1과 2를 넣어서 실행하는 메소드
@@ -181,8 +178,8 @@ object LearnScala {
 }
 ```
 
-익명함수2
-```
+## 익명함수2
+```scala
 object LearnScala {    
     // ① 메소드를 정의하는 방식
     def add1(x:Int, y:Int) = x + y 
@@ -209,10 +206,10 @@ object LearnScala {
 
 # 튜플
 
-튜플
+## 튜플
 - Tuple1부터 Tuple22까지 사용할 수 있고 그 이상을 쓰려면 컬렉션과 같은 다른 자료구조를 사용
-- 튜플의 값에 접근하려면 ._1, ._2와 같은 메소드를 사용하
-```
+- 튜플의 값에 접근하려면 .\_1, .\_2와 같은 메소드를 사용
+```scala
 object LearnScala {
     def main(args: Array[String]): Unit = {
         val t1 = new Tuple3(1, "hello", true)
@@ -325,7 +322,7 @@ object LearnScala {
 
 # Collection
 
-Array
+## Array
 - 스칼라의 배열은 자바의 배열에 대응
     - 자바 int[] == 스칼라 Array[Int]
 - 스칼라의 배열은 mutable
@@ -381,11 +378,11 @@ object LearnScala {
 }
 ```
 
-List
+## List
 - 스칼라의 기본 List는 scala.collection.immutable.List => 값 변경 불가
 - 리스트의 값 추가, 삭제는 새로운 리스트를 만들어내는 방식으로 동작
 - 기본 List는 Linked list로 구현
-```
+```scala
 object LearnScala {
     def main(args: Array[String]): Unit = {
         // List[Any](기본 리스트를 사용하므로 Immutable) 
@@ -418,13 +415,13 @@ object LearnScala {
 }
 ```
 
-Set
+## Set
 - 스칼라에서 기본 Set은 Predef.Set
 - Set은 크기가 4일 때까지는 크기에 따라 별도 클래스
     - Set1, Set2, Set3, Set4
 - 성요소가 4개보다 많아지면 HashSet으로 구현
 - Set은 집합에 대응하는 개념(중복X), 순서가 보장되지 않음
-```
+```scala
 object LearnScala {
     def main(args: Array[String]): Unit = {
         // ① 내용을 수정할 수 없는 Set
@@ -461,12 +458,12 @@ object LearnScala {
 }
 ```
 
-Map
+## Map
 - 스칼라에서 기본 Map은 Predef.Map(scala.collection.immutable.Map)
 - 구성요소가 4개일 때까지는 Map1, Map2, Map3, Map4
 - 구성요소 더 많아지면 HashMap
 - 키는 중복할 수 없으며 Set와 마찬가지로 순서가 보장되지 않음
-```
+```scala
 object LearnScala {
     def main(args: Array[String]): Unit = {
         // ① Map[String, Int] 타입의 맵 
@@ -502,9 +499,9 @@ object LearnScala {
 }
 ```
 
-Array/List/Set/Map의 타입
+## Array/List/Set/Map의 타입
 - 최종 타입은 공통으로 상속받는 타입 중 최상위 타입으로 결정
-```
+```scala
 object LearnScala {
     class Animal()
     class Dog() extends Animal()
@@ -526,14 +523,14 @@ object LearnScala {
 }
 ```
 
-변경할 수 있는(Mutable) Collection
+## 변경할 수 있는(Mutable) Collection
 - 스칼라는 변경할 수 없는(immutable) Collection을 사용하는 것을 권장하여 기본 Collection이 immutable
     - 필요한 경우 mutable하게 사용 가능
 - ArrayBuffer는 자바에서 배열로 구현되는 java.util.ArrayList와 유사
 - ListBuffer는 List처럼 Linked List로 구현
 - mutable Collection을 사용할 때는 앞에 mutable 붙임
     - mutable.ArrayBuffer, mutable.ListBuffer, mutable.Set, mutable.Map
-```
+```scala
 import scala.collection.mutable  
 
 object LearnScala {
@@ -568,12 +565,11 @@ object LearnScala {
 // ④ HashMap(six -> 6, two -> 2, five // -> 5, one -> 1)
 ```
 
-변경할 수 없는(immutable)collection에서 var와 val사용
+## 변경할 수 없는(immutable)collection에서 var와 val사용
 - 변경할 수 없는(immutable) Collection이 var로 선언된 경우에 Collection에 +=연산자나 -+연산자를 사용할 수 있음
     - 새로운 Collection이 만들어져서 var로 선언된 변수에 저장
 - 변경할 수 있는(mutable) Collection의 경우에는 +=나 -=연산자가 collection의 메소드로 동작
-
-```
+```scala
 import scala.collection.mutable  
 
 object LearnScala {
@@ -598,10 +594,9 @@ object LearnScala {
 
 # 클래스
 
-클래스
+## 클래스
 - 클래스 선언부가 기본 생성자 역할을 함
-
-```
+```scala
 // ① 단순한 클래스
 class Person1(fname:String, lname:String)
 
@@ -627,8 +622,9 @@ class Person4(val fname:String, var lname:String)
 - var로 생성자의 매개변수를 선언하면 해당 이름을 가지는 변수(private)와 public getter, setter메소드를 생성
 - 스칼라에서는 명시적으로 정의되지 않으면 모두 public으로 간주
 - private 변수의 이름과 getter, setter가 모두 같은 이름을 가지는 경우를 직접 코드로 구현할 수는 없음
-    - getter와 setter를 사용하기 위해서는 private 변수의 이름은 다르게 지정 => 메소드명과 구분하기 위해 _를 변수명 앞에 붙이기도 함
-```
+    - getter와 setter를 사용하기 위해서는 private 변수의 이름은 다르게 지정 => 메소드명과 구분하기 위해 \_를 변수명 앞에 붙이기도 함
+
+```scala
 object LearnScala {
     def main(args: Array[String]): Unit = {        
         // ① 단순한 클래스
@@ -663,10 +659,10 @@ object LearnScala {
 ```
 
 
-getter와 setter
+## getter와 setter
 - 자바와 달리 스칼라는 변수(val, var)와 메소드(def)는 같은 이름을 사용할 수 없음
     - 자바에서는 `int name;` 이라는 필드와 `int name(){ return 0; }` 이라는 메소드가 한 클래스에 있을 수 있으나 스칼라는 그럴 수 없음
-```
+```scala
 // 자바 스타일 클래스
 class JPerson() {  
     var _name: String = null  
